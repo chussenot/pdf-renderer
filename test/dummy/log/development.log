@@ -1137,3 +1137,4 @@ Started GET "/home" for 127.0.0.1 at Wed Aug 10 17:56:16 +0700 2011
   Processing by HomeController#index as HTML
 Rendered home/index.html.erb within layouts/application (2.2ms)
 Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/gems/pdf-renderer/test/dummy/config/environment.rb:5)
