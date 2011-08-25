@@ -2520,3 +2520,289 @@ Rendered home/index.pdf.builder (2.3ms)
 Rendered text template (0.0ms)
 Sent data contentsHello.pdf (1.4ms)
 Completed 200 OK in 623ms (Views: 622.1ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/pdf-renderer/test/dummy/config/environment.rb:5)
+
+
+Started GET "/home" for 127.0.0.1 at Wed Aug 10 23:56:27 +0700 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/pdf-renderer/test/dummy/config/environment.rb:5)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Wed Aug 10 23:57:20 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (19.1ms)
+Rendered home/index.pdf.builder (2.3ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (1.4ms)
+Completed 200 OK in 627ms (Views: 626.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.xml" for 127.0.0.1 at Thu Aug 11 00:20:24 +0700 2011
+  Processing by HomeController#index as XML
+Rendered home/index.xml.builder (3.9ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/pdf-renderer/test/dummy/config/environment.rb:5)
+
+
+Started GET "/home.xml" for 127.0.0.1 at Thu Aug 11 08:43:47 +0700 2011
+  Processing by HomeController#index as XML
+Rendered home/index.xml.builder (18.4ms)
+Completed 200 OK in 23ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.xml" for 127.0.0.1 at Thu Aug 11 08:44:02 +0700 2011
+  Processing by HomeController#index as XML
+Rendered home/index.xml.builder (4.3ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/pdf-renderer/test/dummy/config/environment.rb:5)
+
+
+Started GET "/home.xml" for 127.0.0.1 at Thu Aug 11 08:53:32 +0700 2011
+  Processing by HomeController#index as XML
+Rendered home/index.xml.builder (3.2ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/pdf-renderer/test/dummy/config/environment.rb:5)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 08:54:09 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (18.1ms)
+Rendered home/index.pdf.builder (2.3ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (1.3ms)
+Completed 200 OK in 634ms (Views: 633.2ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/pdf-renderer/test/dummy/config/environment.rb:5)
+
+
+Started GET "/gateway/sample" for 127.0.0.1 at Thu Aug 11 13:43:34 +0700 2011
+
+ActionController::RoutingError (No route matches "/gateway/sample"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/gateway/home" for 127.0.0.1 at Thu Aug 11 13:43:48 +0700 2011
+
+ActionController::RoutingError (No route matches "/gateway/home"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at Thu Aug 11 13:44:01 +0700 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 13:44:10 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (27.1ms)
+Rendered home/index.pdf.builder (2.8ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (3.1ms)
+Completed 200 OK in 664ms (Views: 663.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 13:45:06 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (4.2ms)
+Rendered home/index.pdf.builder (3.9ms)
+Completed 500 Internal Server Error in 21ms
+
+NoMethodError (undefined method `index' for #<Nokogiri::XML::Attr:0x81be176c name="size" value="200300">):
+  app/controllers/home_controller.rb:19:in `index'
+  app/controllers/home_controller.rb:17:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/pdf-renderer/test/dummy/config/environment.rb:5)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 13:46:02 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (20.0ms)
+Rendered home/index.pdf.builder (3.0ms)
+Completed 500 Internal Server Error in 34ms
+
+NoMethodError (undefined method `index' for #<Nokogiri::XML::Attr:0x8199448c name="size" value="[200,300]">):
+  app/controllers/home_controller.rb:19:in `index'
+  app/controllers/home_controller.rb:17:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/pdf-renderer/test/dummy/config/environment.rb:5)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 13:46:27 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (16.9ms)
+Rendered home/index.pdf.builder (2.3ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (2.9ms)
+Completed 200 OK in 627ms (Views: 626.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 13:46:44 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (4.1ms)
+Rendered home/index.pdf.builder (2.5ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (0.7ms)
+Completed 200 OK in 638ms (Views: 637.2ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/pdf-renderer/test/dummy/config/environment.rb:5)
+
+
+Started GET "/home.xml" for 127.0.0.1 at Thu Aug 11 14:49:38 +0700 2011
+  Processing by HomeController#index as XML
+Rendered home/index.xml.builder (16.8ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/pdf-renderer/test/dummy/config/environment.rb:5)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 14:50:03 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (19.3ms)
+Rendered home/index.pdf.builder (2.4ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (3.0ms)
+Completed 200 OK in 629ms (Views: 628.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 14:50:41 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (2.7ms)
+Rendered home/index.pdf.builder (3.8ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (0.6ms)
+Completed 200 OK in 630ms (Views: 629.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 14:56:16 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (4.5ms)
+Rendered home/index.pdf.builder (3.8ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (0.7ms)
+Completed 200 OK in 646ms (Views: 645.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 14:56:42 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (2.8ms)
+Rendered home/index.pdf.builder (3.9ms)
+Completed 500 Internal Server Error in 522ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/home_controller.rb:19:in `index'
+  app/controllers/home_controller.rb:17:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 14:57:50 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (4.0ms)
+Rendered home/index.pdf.builder (3.0ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (0.6ms)
+Completed 200 OK in 567ms (Views: 566.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 14:58:55 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (3.0ms)
+Rendered home/index.pdf.builder (3.1ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (0.7ms)
+Completed 200 OK in 580ms (Views: 579.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 15:00:14 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (2.7ms)
+Rendered home/index.pdf.builder (2.4ms)
+Completed 500 Internal Server Error in 498ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/home_controller.rb:19:in `index'
+  app/controllers/home_controller.rb:17:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/dev/Documents/dev/pdf-renderer/test/dummy/config/environment.rb:5)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 15:02:09 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (17.3ms)
+Rendered home/index.pdf.builder (2.3ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (3.1ms)
+Completed 200 OK in 634ms (Views: 632.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 15:02:24 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (2.7ms)
+Rendered home/index.pdf.builder (4.1ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (0.7ms)
+Completed 200 OK in 655ms (Views: 654.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 15:02:57 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (3.9ms)
+Rendered home/index.pdf.builder (4.2ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (0.7ms)
+Completed 200 OK in 667ms (Views: 666.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 15:03:27 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (4.6ms)
+Rendered home/index.pdf.builder (4.0ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (0.7ms)
+Completed 200 OK in 683ms (Views: 682.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 15:03:58 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (4.2ms)
+Rendered home/index.pdf.builder (3.1ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (0.7ms)
+Completed 200 OK in 611ms (Views: 610.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 15:04:33 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (4.0ms)
+Rendered home/index.pdf.builder (2.7ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (0.7ms)
+Completed 200 OK in 771ms (Views: 770.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home.pdf" for 127.0.0.1 at Thu Aug 11 15:05:26 +0700 2011
+  Processing by HomeController#index as PDF
+Rendered home/index.pdf.builder (4.2ms)
+Rendered home/index.pdf.builder (4.4ms)
+Rendered text template (0.0ms)
+Sent data contentsHello.pdf (1.1ms)
+Completed 200 OK in 659ms (Views: 657.8ms | ActiveRecord: 0.0ms)

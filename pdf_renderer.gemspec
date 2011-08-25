@@ -2,8 +2,9 @@
 # project in your rails apps through git.
 Gem::Specification.new do |s|
   s.name = "pdf-renderer"
+  s.authors = "Bobby Nguyen"
   s.summary = "Insert PdfRenderer summary."
   s.description = "Insert PdfRenderer description."
   s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
-  s.version = "0.0.1"
+  s.version = "0.0.6"
 end
