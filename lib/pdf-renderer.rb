@@ -51,58 +51,59 @@ ActionController::Renderers.add :pdf do |filename, options|
 
       div_xml_element.children.each do |item_xml_element|
 
-        case item_xml_element.name
-        when 'cell'
-          options = Hash.new
-          options[:content] = item_xml_element.content
-          options[:width] = item_xml_element.attributes["width"].nil? ? 100 : item_xml_element.attributes["width"].value.to_i
-          options[:height] = item_xml_element.attributes["height"].nil? ? 100 : item_xml_element.attributes["height"].value.to_i
-          options[:x] = div_x_offset + ( item_xml_element.attributes["x"].nil? ? 0 : item_xml_element.attributes["x"].value.to_i )
-          options[:y] = div_y_offset + ( item_xml_element.attributes["y"].nil? ? 0 : item_xml_element.attributes["y"].value.to_i )
-          
-          if !item_xml_element.attributes["options"].nil?
-            options.merge!(eval(item_xml_element.attributes["options"].value))
-          end          
-          
-          pdf.cell(options)
-        when 'text'          
-          options = item_xml_element.attributes["options"].nil? ? Hash.new : eval(item_xml_element.attributes["options"].value)
-          
-          x = div_x_offset + ( item_xml_element.attributes["x"].nil? ? 0 : item_xml_element.attributes["x"].value.to_i )
-          y = div_y_offset + ( item_xml_element.attributes["y"].nil? ? 0 : item_xml_element.attributes["y"].value.to_i )
-          
-          options[:at] = [ x, y ]
-          
-          pdf.text_box( item_xml_element.content, options )
-        when 'image'
-          options = item_xml_element.attributes["options"].nil? ? Hash.new : eval(item_xml_element.attributes["options"].value)
-          
-          x = div_x_offset + ( item_xml_element.attributes["x"].nil? ? 0 : item_xml_element.attributes["x"].value.to_i )
-          y = div_y_offset + ( item_xml_element.attributes["y"].nil? ? 0 : item_xml_element.attributes["y"].value.to_i )
-          width = item_xml_element.attributes["width"].nil? ? 100 : item_xml_element.attributes["width"].value.to_i
-          height = item_xml_element.attributes["height"].nil? ? 100 : item_xml_element.attributes["height"].value.to_i
+        if item_xml_element.attributes["visible"].nil?
+          visible = true
+        else
+          visible = item_xml_element.attributes["visible"].value == "true"
+        end
 
-          options[:at] = [ x, y ]
-          options[:width] = width
-          options[:height] = height
+        if visible
+          case item_xml_element.name
+          when 'cell'
+            options = Hash.new
+            options[:content] = item_xml_element.content
+            options[:width] = item_xml_element.attributes["width"].nil? ? 100 : item_xml_element.attributes["width"].value.to_i
+            options[:height] = item_xml_element.attributes["height"].nil? ? 100 : item_xml_element.attributes["height"].value.to_i
+            options[:x] = div_x_offset + ( item_xml_element.attributes["x"].nil? ? 0 : item_xml_element.attributes["x"].value.to_i )
+            options[:y] = div_y_offset + ( item_xml_element.attributes["y"].nil? ? 0 : item_xml_element.attributes["y"].value.to_i )
 
-          pdf.image(item_xml_element.attributes["path"].value,options) if !item_xml_element.attributes["path"].nil?
+            if !item_xml_element.attributes["options"].nil?
+              options.merge!(eval(item_xml_element.attributes["options"].value))
+            end          
 
-        when 'line'
-          if item_xml_element.attributes["visible"].nil?
-            visible = true
-          else
-            visible = item_xml_element.attributes["visible"].value == "true"
-          end
-          
-          if visible
+            pdf.cell(options)
+          when 'text'          
+            options = item_xml_element.attributes["options"].nil? ? Hash.new : eval(item_xml_element.attributes["options"].value)
+
+            x = div_x_offset + ( item_xml_element.attributes["x"].nil? ? 0 : item_xml_element.attributes["x"].value.to_i )
+            y = div_y_offset + ( item_xml_element.attributes["y"].nil? ? 0 : item_xml_element.attributes["y"].value.to_i )
+
+            options[:at] = [ x, y ]
+
+            pdf.text_box( item_xml_element.content, options )
+          when 'image'
+
+            options = item_xml_element.attributes["options"].nil? ? Hash.new : eval(item_xml_element.attributes["options"].value)
+
+            x = div_x_offset + ( item_xml_element.attributes["x"].nil? ? 0 : item_xml_element.attributes["x"].value.to_i )
+            y = div_y_offset + ( item_xml_element.attributes["y"].nil? ? 0 : item_xml_element.attributes["y"].value.to_i )
+            width = item_xml_element.attributes["width"].nil? ? 100 : item_xml_element.attributes["width"].value.to_i
+            height = item_xml_element.attributes["height"].nil? ? 100 : item_xml_element.attributes["height"].value.to_i
+
+            options[:at] = [ x, y ]
+            options[:width] = width
+            options[:height] = height
+
+            pdf.image(item_xml_element.attributes["path"].value,options) if !item_xml_element.attributes["path"].nil?
+
+          when 'line'
             xA = div_x_offset + ( item_xml_element.attributes["xA"].nil? ? 0 : item_xml_element.attributes["xA"].value.to_i )
             yA = div_y_offset + ( item_xml_element.attributes["yA"].nil? ? 0 : item_xml_element.attributes["yA"].value.to_i )
             xB = div_x_offset + ( item_xml_element.attributes["xB"].nil? ? 0 : item_xml_element.attributes["xB"].value.to_i )
             yB = div_y_offset + ( item_xml_element.attributes["yB"].nil? ? 0 : item_xml_element.attributes["yB"].value.to_i )
 
-            pdf.line(xA,yA,xB,yB)
-          end         
+            pdf.line(xA,yA,xB,yB)        
+          end
         end
       end
     end
