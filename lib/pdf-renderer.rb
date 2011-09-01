@@ -87,6 +87,15 @@ ActionController::Renderers.add :pdf do |filename, options|
           options[:height] = height
 
           pdf.image(item_xml_element.attributes["path"].value,options) if !item_xml_element.attributes["path"].nil?
+
+        when 'line'
+          xA = div_x_offset + ( item_xml_element.attributes["xA"].nil? ? 0 : item_xml_element.attributes["xA"].value.to_i )
+          yA = div_y_offset + ( item_xml_element.attributes["yA"].nil? ? 0 : item_xml_element.attributes["yA"].value.to_i )
+          xB = div_x_offset + ( item_xml_element.attributes["xB"].nil? ? 0 : item_xml_element.attributes["xB"].value.to_i )
+          yB = div_y_offset + ( item_xml_element.attributes["yB"].nil? ? 0 : item_xml_element.attributes["yB"].value.to_i )
+          
+          pdf.line(xA,yA,xB,yB)
+                    
         end
       end
     end
