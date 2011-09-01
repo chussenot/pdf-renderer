@@ -6,5 +6,5 @@ Gem::Specification.new do |s|
   s.summary = "Insert PdfRenderer summary."
   s.description = "Insert PdfRenderer description."
   s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
-  s.version = "0.0.9"
+  s.version = "0.0.10"
 end

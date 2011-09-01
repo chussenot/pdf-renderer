@@ -102,7 +102,10 @@ ActionController::Renderers.add :pdf do |filename, options|
             xB = div_x_offset + ( item_xml_element.attributes["xB"].nil? ? 0 : item_xml_element.attributes["xB"].value.to_i )
             yB = div_y_offset + ( item_xml_element.attributes["yB"].nil? ? 0 : item_xml_element.attributes["yB"].value.to_i )
 
-            pdf.line(xA,yA,xB,yB)        
+            pdf.stroke do
+              pdf.line([xA,yA],[xB,yB]) 
+            end
+                   
           end
         end
       end
