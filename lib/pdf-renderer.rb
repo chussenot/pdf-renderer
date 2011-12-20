@@ -17,7 +17,7 @@ ActionController::Renderers.add :pdf do |filename, options|
   pdf = nil
   
   # Parse XML output
-  layout_xml = Nokogiri::XML(render_to_string(options))
+  # layout_xml = Nokogiri::XML(render_to_string(options))
   
   layout_xml = Nokogiri::XML(render_to_string(options)) do |config|
     config.noent.noblanks           # NOBLANKS - Remove blank nodes / NOENT - Substitute entities
