@@ -11,6 +11,7 @@ require "action_controller"
 
 require "prawn"
 require 'nokogiri'
+require 'uri'
 ActionController::Renderers.add :pdf do |filename, options|
   
   pdf = nil
@@ -93,8 +94,17 @@ ActionController::Renderers.add :pdf do |filename, options|
             options[:at] = [ x, y ]
             options[:width] = width
             options[:height] = height
+           
+            path = item_xml_element.attributes["path"]
+            if !item_xml_element.attributes["path"].nil?
+              if path.scan('http://').count == 1 then
+                pdf.image(open(item_xml_element.attributes["path"].value),options)
+              else
+                pdf.image(item_xml_element.attributes["path"].value,options)
+              end
+            end
 
-            pdf.image(item_xml_element.attributes["path"].value,options) if !item_xml_element.attributes["path"].nil?
+            #pdf.image(item_xml_element.attributes["path"].value,options) if !item_xml_element.attributes["path"].nil?
 
           when 'line'
             xA = div_x_offset + ( item_xml_element.attributes["xA"].nil? ? 0 : item_xml_element.attributes["xA"].value.to_i )
