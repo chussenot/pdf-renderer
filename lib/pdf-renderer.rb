@@ -97,7 +97,7 @@ ActionController::Renderers.add :pdf do |filename, options|
            
             path = item_xml_element.attributes["path"]
             if !item_xml_element.attributes["path"].nil?
-              if path.scan('http://').count == 1 then
+              if path.to_s.scan('http://').count == 1 then
                 pdf.image(open(item_xml_element.attributes["path"].value),options)
               else
                 pdf.image(item_xml_element.attributes["path"].value,options)
