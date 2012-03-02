@@ -82,6 +82,18 @@ ActionController::Renderers.add :pdf do |filename, options|
             options[:at] = [ x, y ]
 
             pdf.text_box( item_xml_element.content, options )
+          
+          when 'table'
+            options = item_xml_element.attributes["options"].nil? ? Hash.new : eval(item_xml_element.attributes["options"].value)
+
+            options[:border_style]  = item_xml_element.attributes["border_style"]
+            options[:font_size]     = item_xml_element.attributes["font_size"]
+            options[:position]      = item_xml_element.attributes["position"] 
+            options[:column_widths] = item_xml_element.attributes["column_widths"] 
+            options[:align]         = item_xml_element.attributes["align"] 
+            options[:row_colors]    = item_xml_element.attributes["row_colors"]
+            
+            pdf.table( item_xml_element.content, options )
           when 'image'
 
             options = item_xml_element.attributes["options"].nil? ? Hash.new : eval(item_xml_element.attributes["options"].value)
