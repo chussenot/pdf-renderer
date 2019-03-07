@@ -1,3 +1,5 @@
 = PdfRenderer
 
+This is no longer supported, please consider using an another File renderer instead.
+
 This project rocks and uses MIT-LICENSE.
